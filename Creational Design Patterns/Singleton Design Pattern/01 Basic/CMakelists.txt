@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.10)
+project(SingleTon LANGUAGES CXX)
+ 
+# Recommended C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+# Executable
+add_executable(SingleTon
+    main.cpp
+    SingleTon.cpp
+)
+ 
+# (Optional) Only if you have headers in current source dir that need to be included
+# Usually not needed if headers are included with relative paths next to sources.
+target_include_directories(SingleTon
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
